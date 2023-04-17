@@ -2,17 +2,14 @@
     <div class="flex justify-center w-full">
 
         <!-- avatar circle -->
-        <div class="flex-shrink-0 mr-5">
-            <div class="cursor-pointer font-bold w-6 h-12 flex items-center justify-center rounded-full">
-                <img class="w-6 h-12 rounded-full" src="assets/sakura.png" alt="perfil">
-            </div>
-        </div>
+        <app-avatar></app-avatar>
 
         <!-- formulario -->
         <div class="flex-1">
 
             <!-- textarea -->
-            <textarea [(ngModel)]="tweetMessage" (input)="changeTweet()" [maxlength]="tweetMaxLenght" class="mb-2
+            <textarea (keyup.enter)="sendTweet()" [(ngModel)]="tweetMessage" (input)="changeTweet()"
+                [maxlength]="tweetMaxLenght" class="mb-2
             bg-gray-200
             focus:outline-none
             focus:shadow-outline
